@@ -2,7 +2,7 @@ name: Auto Commit Bot
 
 on:
   schedule:
-    - cron: "0 2,5,7,9,11,13,15 * * *" # 9AM, 12PM, 2PM, 4PM, 6PM, 8PM, 10PM WIB
+     - cron: "0 */2 * * *"
 
 permissions:
   contents: write
@@ -86,8 +86,8 @@ jobs:
 
           echo "Commit message: $COMMIT_MSG"
 
-          git config user.name "autocommit-bot"
-          git config user.email "bot@autocommit.local"
+          git config user.name "NovaSugiantara"
+          git config user.email "novasugiantara425@gmail.com"
 
           LAST_UPDATED="LAST_UPDATED"
           date -u +"%Y-%m-%dT%H:%M:%SZ" > "$LAST_UPDATED"
