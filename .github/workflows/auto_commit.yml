@@ -1,6 +1,8 @@
 name: Auto Commit Bot
 
 on:
+  workflow_dispatch:
+
   schedule:
      - cron: "0 */2 * * *"
 
@@ -14,6 +16,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: true
 
       - name: Auto commit
         run: |
